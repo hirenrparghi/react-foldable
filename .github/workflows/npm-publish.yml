@@ -23,7 +23,6 @@ jobs:
     needs: build
     runs-on: ubuntu-latest
     steps:
-      - run: npm ci
       - run: echo "registry=https://npm.pkg.github.com/@hirenrparghi" >> .npmrc
       - run: npm run build
       - run: npm publish --access public $(ls *.tgz)
